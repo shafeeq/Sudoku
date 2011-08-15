@@ -123,7 +123,7 @@ int main(int argc, char* argv[]) {
     else //if file couldn't be opened
       cout << "Could not locate file ' " << argv[1] << "'. Enter elements manually" << endl;
   }
-  else if (argc > 2) //More than 2 arguments
+  else if (argc > 2) //More than 1 arguments
     cout <<"More than one arguments. Enter elements manually\n";    
 
   //Asks for user input of all elements,
