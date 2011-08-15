@@ -19,7 +19,7 @@
 
 
 #include <iostream>
-#include <stdlib.h>
+#include <fstream>
 #define ORDER 9
 
 using namespace std;
@@ -28,38 +28,48 @@ int sudoku[ORDER][ORDER];
 int Check (int y[]);
 int temp[ORDER];
 
+void print(int matrix[ORDER][ORDER]) {
+  for (int i = 0; i < ORDER; i++){
+    for (int j = 0; j < ORDER; j++)
+      cout << matrix[i][j] << " ";
+    cout << endl;
+  }
+  return;
+}
+// All the *check functions read the respective elements to a linear array and 
+//pass it to the check() function. Check function searches for multiple
+//occurences of numbers, starting from the first element.
+
+//Checks for duplications in each row 
 int RowCheck ( int x[ORDER][ORDER]) {
-  int i;
-  int l;
-	
-  for (i=0; i<ORDER; i++) {
-    for (l= 0; l<ORDER;l++)
-      temp[l] = x[i][l];
+  for (int i=0; i<ORDER; i++) {
+    for (int j= 0; j<ORDER; j++)
+      temp[j] = x[i][j];
 			
     if ( Check (temp) == 0 )
       return 0;
   }
   return 1;
 }
-									
+
+//Main Check function								
 int Check (int y[ORDER]) {
   int lineartemp;
   for (int i=0; i<ORDER; i++) {
     lineartemp = y[i];
-    for (int j=i+1; j<ORDER; j++) {
+    for (int j=i+1; j<ORDER; j++) { //searches for duplications
       if (y[j] ==  lineartemp)
-	return 0
+	return 0;
 	  }
   }
   return 1;
 }
 
+//Checks for duplications in each column
 int ColumnCheck ( int x[ORDER][ORDER]) {
-  int i;
-  int l;
-  for (i=0; i<ORDER; i++) {
-    for (l= 0; l<ORDER;l++)
-      temp[l] = x[l][i];
+  for (int i=0; i<ORDER; i++) {
+    for (int j= 0; j<ORDER; j++)
+      temp[j] = x[j][i];
 		
     if ( Check (temp) == 0 )
       return 0;
@@ -67,7 +77,14 @@ int ColumnCheck ( int x[ORDER][ORDER]) {
   return 1;
 }			
 
+//Checks for duplaication in all 9 subsquares
 int SquaresCheck (int x[ORDER][ORDER]) {
+  //column and row loops set the starting index for each subsquare.
+  //ie (since I put column loop first),
+  //[0][0], [3][0], [6][0], [0][3], [3][3], [6][3], [0][6],[3][6], [6][6]
+  // i and j  are usual iterators to create the linear array,
+  // and k iterates index of linear array (temp).   
+
   int i;
   int j;
   int column;
@@ -90,17 +107,38 @@ int SquaresCheck (int x[ORDER][ORDER]) {
 			
 
 	
-int main() {
-  int i;
-  int j;
-	
-  for ( i=0; i<ORDER; i++) {
-    for ( j=0; j<ORDER; j++)
-      cin >> sudoku[i][j];
+int main(int argc, char* argv[]) {
+  //program can read a file and check for sudoku contained in it.
+
+  fstream file;
+  if(argc == 2) {
+    file.open(argv[1], ios::in);
+    if (file.is_open() ) {
+      for (int i=0; i<ORDER; i++)
+	for (int j=0; j<ORDER; j++)
+	  file >> sudoku[i][j];  //reads integers from files
+
+      print(sudoku); //prints the sudoku read and stored
+    }
+    else //if file couldn't be opened
+      cout << "Could not locate file ' " << argv[1] << "'. Enter elements manually" << endl;
+  }
+  else if (argc > 2) //More than 2 arguments
+    cout <<"More than one arguments. Enter elements manually\n";    
+
+  //Asks for user input of all elements,
+  //if opening the file fails or if more than two args were passed.
+  if(!file.is_open() ){
+    cout <<"Enter " << ORDER * ORDER << " elements " << endl;
+    for ( int i=0; i<ORDER; i++) {
+      for ( int j=0; j<ORDER; j++)
+	cin >> sudoku[i][j];
+    }
   }
 	
   if ( RowCheck(sudoku) == 0 || ColumnCheck(sudoku)==0 || SquaresCheck(sudoku)==0) {
     cout<<"\nSudoku is incorrect\n";
+
     return 0;
   }
 	
