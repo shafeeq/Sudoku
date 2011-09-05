@@ -8,11 +8,11 @@ Usage
 
 If input is from a file,
 
-   $ ./solve puzzle-foo
+`$ ./solve puzzle-foo`
 
 and if manul entry is preferred (the hardway),
 
-    $ ./ solve
+`$ ./ solve`
 
 followed by input of 81 (9x9) numbers
 
@@ -27,23 +27,23 @@ without clues given should be given as 0s.
 
 For example, a completely blank puzzle and a normal puzzle would like like:
 
-  0 0 0 0 0 0 0 0 0      0 0 6 0 0 7 9 5 1
+0 0 0 0 0 0 0 0 0      0 0 6 0 0 7 9 5 1
 
-  0 0 0 0 0 0 0 0 0      0 0 0 0 0 0 8 0 2
+0 0 0 0 0 0 0 0 0      0 0 0 0 0 0 8 0 2
 
-  0 0 0 0 0 0 0 0 0      2 1 9 8 6 5 0 0 0
+0 0 0 0 0 0 0 0 0      2 1 9 8 6 5 0 0 0
 
-  0 0 0 0 0 0 0 0 0      4 0 0 7 5 0 3 0 9
+0 0 0 0 0 0 0 0 0      4 0 0 7 5 0 3 0 9
 
-  0 0 0 0 0 0 0 0 0      0 7 3 0 1 0 0 0 4
+0 0 0 0 0 0 0 0 0      0 7 3 0 1 0 0 0 4
 
-  0 0 0 0 0 0 0 0 0      0 8 2 9 0 0 0 1 0
+0 0 0 0 0 0 0 0 0      0 8 2 9 0 0 0 1 0
 
-  0 0 0 0 0 0 0 0 0      0 0 0 5 9 0 6 3 0
+0 0 0 0 0 0 0 0 0      0 0 0 5 9 0 6 3 0
 
-  0 0 0 0 0 0 0 0 0      0 4 7 6 0 2 1 9 0
+0 0 0 0 0 0 0 0 0      0 4 7 6 0 2 1 9 0
 
-  0 0 0 0 0 0 0 0 0      6 0 5 0 0 1 2 0 0
+0 0 0 0 0 0 0 0 0      6 0 5 0 0 1 2 0 0
 
 
 
