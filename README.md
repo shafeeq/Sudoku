@@ -99,5 +99,5 @@ Performance
 I hope I nailed it enough for a basic backtracker.
 
 The hardest sudoku mentioned in the wikipedia article (and given as 
-sample-puzzle-2-hard in repo) was solved in 1minutea and 12seconds using a Pentium 4 CPU 2.66GHz processor
-and in 45 seconds using a core i3 2.4Ghz processor.
+sample-puzzle-2-hard in repo) was solved in 1 minute and 12 seconds using a Pentium 4 2.66GHz processor
+and in 45 seconds using a core i3 2.4GHz processor.
