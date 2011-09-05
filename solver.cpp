@@ -113,11 +113,10 @@ int main(int argc, char* argv[])
 		isClueGiven[row][column] = 1;
 	    }
 	  }
-	}
-      print (sudoku);
-    }
-  else
+	  print (sudoku);
+	}  else
     cout << "Could not locate file ' " << argv[1] << "'. Enter elements manually" << endl;
+    }
   
   if (argc > 2)
     cout << "More than one arguments. Enter elements manually\n";
