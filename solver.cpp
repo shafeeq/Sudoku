@@ -136,18 +136,6 @@ int main(int argc, char* argv[])
     print (sudoku);
   }
   
-  /*if ( solveSudoku() )
-  {
-     if( checkSolution() ) 
-     {
-      cout << "\n Solution : \n";
-      print(sudoku);
-     } else
-         cout << "Sorry, solution could not be found.\n";
-         
-   } else 
-      cout << "Sorry, solution could not be found\n";
-    */
     storePositions();
     solveSudoku();
     print(sudoku); 
