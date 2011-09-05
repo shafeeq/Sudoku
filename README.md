@@ -45,7 +45,8 @@ For example, a completely blank puzzle and a normal puzzle would like like:
 
     0 0 0 0 0 0 0 0 0
     
-and
+and 
+
 	0 3 0 7 2 1 0 6 0
 
 	2 0 5 4 0 0 0 3 1
