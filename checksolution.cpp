@@ -1,3 +1,11 @@
+/* 
+ * NOTE: At this stage, the program makes no use of the functions defined in this file.
+ * This file and the functions within can be used to check if the solution created by 
+ * the solver is correct, ie according to the constraints in each row, column, and squares
+ *  -> no duplications.
+ * 
+ */
+
 #include <iostream>
 #include "checkfns.h"
 #define ORDER 9
