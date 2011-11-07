@@ -10,7 +10,7 @@ If input is from a file,
 
 `$ ./solve puzzle-foo`
 
-and if manul entry is preferred (the hardway),
+and if manual entry is preferred (the hardway),
 
 `$ ./ solve`
 
