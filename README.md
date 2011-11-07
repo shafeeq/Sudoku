@@ -80,7 +80,7 @@ which I shall quote here:
 > A brute force algorithm visits the empty cells in some order, filling in
 > digits sequentially from the available choices, or backtracking
 > (removing failed choices) when stymied. For the purposes of this exposition,
-> a naive iteration order of left to right,> top to bottom is assumed.
+> a naive iteration order of left to right, top to bottom is assumed.
 
 > Briefly, a brute force program would solve a puzzle by placing the digit "1"
 > in the first cell and checking if it is allowed to be there. If there are no
